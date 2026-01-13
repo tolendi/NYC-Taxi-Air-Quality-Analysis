@@ -17,6 +17,10 @@ Data access is managed through Microsoft Fabric's integrated security model:
 * **Automatic Lineage:** Microsoft Fabric's Lineage View is used to track data provenance from API sources to Power BI dashboards.
 * **Impact Analysis:** Before modifying any upstream Notebook (e.g., `air_silver`), the Lineage View is used to perform impact analysis on downstream Gold tables.
 
-## 4. Endorsement & Certification
-To build trust in the analytics, the following labels are used in the workspace:
-* **Promoted:** Applied to Gold tables that have passed all quality checks and the final `project_report` to indicate it as the "Single Source of Truth.".
+## 4. Endorsement & Certification (Planned)
+*Note: Endorsement features are subject to tenant administration policies in the current environment.*
+
+In a production environment, the following labels will be applied to maintain the "Single Source of Truth":
+* **Promoted Status:** Will be assigned to all Gold-layer tables (e.g., `gold_taxi_trips_daily`) once the automated DQ (Data Quality) tests in the Spark Notebooks pass.
+* **Certified Status:** The final `project_report` will be certified by the Data Governance team to ensure the metrics (e.g., Total Revenue, Avg PM2.5) are official and audited.
+
